@@ -8,34 +8,24 @@
 
 </body>
 <script>
-    function checkPrime(number) {
-        let numberfirstPrime = 2;
-        let arr = new Array()
-        while (numberfirstPrime < number) {
-            let check = true;
-            for (let i = 2; i <= Math.sqrt(numberfirstPrime) ; i++) {
-                if (numberfirstPrime % i === 0) {
-                    check = false
-                    break
-                }
+    x = Number(+prompt("nhập số nguyên tố bất kỳ"));
+    function checkPrime(numb) {
+        for (let i = 2; i <= Math.sqrt(numb); i++) {
+            if (numb % i === 0) {
+                return false;
             }
-            if (check) {
-                arr.push(numberfirstPrime)
-            }
-            numberfirstPrime ++
         }
-        return arr
+        return true;
     }
-    function sumOfListPrime(arr) {
+    function sumOfListPrime(num) {
         let sum = 0;
-        for (let i = 0; i <= arr.length; i++) {
-            sum += arr[i]
+        for (let j = 2; j < x; j++) {
+            if (checkPrime(j)) {
+                sum += j;
+            }
+            return sum
         }
-        return sum
     }
-    let x  = +prompt('Nhập số x để tính tổng các số nguyên tố')
-    let arr = checkPrime(x)
-    let total = sumOfListPrime(arr)
-    console.log('Tổng số nguyên tố : = ' + total)
+    console.log('Tổng số nguyên tố : = ' + sumOfListPrime(sum))
 </script>
 </html>
