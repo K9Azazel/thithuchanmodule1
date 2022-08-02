@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau1</title>
+</head>
+<body>
+<script>
+    let array = new Array(3,1,5,1,6,1);
+    function findAvg(average){
+       let sum = 0
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i]
+        average = sum/array.length
+    }
+        return average
+    }
+    console.log(" giá trị trung bình  "+ findAvg())
+</script>
+</body>
+</html>

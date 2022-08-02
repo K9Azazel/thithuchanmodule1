@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau 3</title>
+</head>
+<body>
+
+</body>
+<script>
+    function checkPrime(number) {
+        let numberfirstPrime = 2;
+        let arr = new Array()
+        while (numberfirstPrime < number) {
+            let check = true;
+            for (let i = 2; i <= Math.sqrt(numberfirstPrime) ; i++) {
+                if (numberfirstPrime % i === 0) {
+                    check = false
+                    break
+                }
+            }
+            if (check) {
+                arr.push(numberfirstPrime)
+            }
+            numberfirstPrime ++
+        }
+        return arr
+    }
+    function sumOfListPrime(arr) {
+        let sum = 0;
+        for (let i = 0; i <= arr.length; i++) {
+            sum += arr[i]
+        }
+        return sum
+    }
+    let x  = +prompt('Nhập số x để tính tổng các số nguyên tố')
+    let arr = checkPrime(x)
+    let total = sumOfListPrime(arr)
+    console.log('Tổng số nguyên tố : = ' + total)
+</script>
+</html>
